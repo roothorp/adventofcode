@@ -11,14 +11,11 @@ import (
 
 func main() {
 	start := time.Now()
-	part1()
+	lines := readFile("input.txt")
+	part1(lines)
+	part2(lines)
 	end := time.Now()
-	fmt.Printf("Part 1 time elapsed: %dns\n", end.Sub(start))
-
-	start = time.Now()
-	part2()
-	end = time.Now()
-	fmt.Printf("Part 2 time elapsed: %dns\n", end.Sub(start))
+	fmt.Printf("Took %dns\n", end.Sub(start))
 }
 
 func readFile(path string) []int {
@@ -29,7 +26,7 @@ func readFile(path string) []int {
 	}
 	scanner := bufio.NewScanner(file)
 
-	// read file into slice
+	// read file into (int) slice
 	var lines []int
 	for scanner.Scan() {
 		line, err := strconv.Atoi(scanner.Text())
@@ -41,10 +38,7 @@ func readFile(path string) []int {
 	return lines
 }
 
-func part1() {
-	// read file
-	lines := readFile("input.txt")
-
+func part1(lines []int) {
 	// count occurances of i being bigger than i-1
 	count := 0
 
@@ -57,10 +51,7 @@ func part1() {
 	fmt.Printf("Part 1 result: %d\n", count)
 }
 
-func part2() {
-	// read file
-	lines := readFile("input.txt")
-
+func part2(lines []int) {
 	//make another slice with (i + i-1 + i-2)
 	sum := make([]int, len(lines)-2)
 	for i := 2; i < len(lines); i++ {
