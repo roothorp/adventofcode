@@ -135,10 +135,6 @@ func part1(lines []string) {
 	}
 }
 
-func remove(slice []BingoGrid, index int) []BingoGrid {
-	return append(slice[:index], slice[index+1:]...)
-}
-
 func part2(lines []string) {
 	drawn := strings.Split(lines[0], ",")
 	lines = lines[2:]
