@@ -31,7 +31,7 @@ func readFile(path string) []int {
 	for scanner.Scan() {
 		line, err := strconv.Atoi(scanner.Text())
 		if err != nil {
-			log.Fatalf(err.Error())
+			log.Fatal(err)
 		}
 		lines = append(lines, line)
 	}

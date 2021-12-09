@@ -86,12 +86,12 @@ func part2(lines []string) {
 	// we should have 1 remaining number; convert it to an int
 	o, err := strconv.ParseInt(oxy[0], 2, 0)
 	if err != nil {
-		log.Fatalf(err.Error())
+		log.Fatal(err)
 	}
 
 	c, err := strconv.ParseInt(co2[0], 2, 0)
 	if err != nil {
-		log.Fatalf(err.Error())
+		log.Fatal(err)
 	}
 
 	// multiply them for our answer
