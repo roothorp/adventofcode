@@ -165,7 +165,6 @@ func part2(lines []string) {
 
 	for _, v := range drawn {
 		temp := []BingoGrid{}
-		fmt.Println(len(grids))
 		value, err := strconv.Atoi(v)
 		if err != nil {
 			log.Fatal(err)
